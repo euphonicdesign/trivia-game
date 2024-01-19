@@ -44,6 +44,8 @@ function TriviaQuestion() {
   }, []);
 
   const changeQuestion = (answerSelected) => {
+    if (!triviaQuestions) return;
+
     if (answerSelected === question.answer) {
       setAnswerType("Correct");
     } else {
