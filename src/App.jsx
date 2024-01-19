@@ -63,7 +63,9 @@ function TriviaQuestion() {
         <button onClick={() => changeQuestion("False")}>False</button>
       </div>
       <p>{answerType}</p>
-      <p>Score: {score}</p>
+      <p>
+        Score: {score}/{triviaQuestions.length}
+      </p>
     </>
   );
 }
