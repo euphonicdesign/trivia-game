@@ -44,7 +44,7 @@ function TriviaQuestion() {
       setAnswerType("Correct!");
       setScore((prev) => prev + 1);
     } else {
-      setAnswerType("Incorrect");
+      setAnswerType("Incorrect!");
     }
 
     if (count < triviaQuestions.length - 2) {
@@ -58,14 +58,20 @@ function TriviaQuestion() {
       <h2>
         {count + 1}. {question.question}
       </h2>
-      <div>
-        <button onClick={() => changeQuestion("True")}>True</button>
-        <button onClick={() => changeQuestion("False")}>False</button>
-      </div>
+      {count + 1 < 29 && (
+        <div>
+          <button className="answerBtn" onClick={() => changeQuestion("True")}>
+            True
+          </button>
+          <button className="answerBtn" onClick={() => changeQuestion("False")}>
+            False
+          </button>
+        </div>
+      )}
       <p>{answerType}</p>
-      <p>
+      <h3>
         Score: {score}/{triviaQuestions.length}
-      </p>
+      </h3>
     </>
   );
 }
